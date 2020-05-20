@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>ExtendedSelector tests</title>
+    <link rel="stylesheet" href="../qunit/qunit-2.10.0.css">
+</head>
+<body>
+<div id="qunit"></div>
+<div id="qunit-fixture"></div>
+<style type="text/css">
+    body>.container { display:none!important; }
+</style>
+<div class="container">
+
+    <div class="starter-template">
+        <h1>Test template</h1>
+
+        <p class="lead">Use this document as a way to quickly start any new project.<br> All you get is this text and a
+            mostly barebones HTML document.</p>
+
+        <div id="test-id-div" i18n="test-attr-i18n">
+            <div id="test-div" class="test-class test-class-two">
+                <a href="test.html" class="a-test-class a-test-class-two a-test-class-three"/>
+                <h2>
+                    <div>
+                        <a href="/test/"><time class="g-time" title=" 8 июля 2016" datetime=" 15:00,  8 июля 2016">15:00</time><br/>adg-test</a>
+                    </div>
+                </h2>
+            </div>
+        </div>
+    </div>
+
+    <div id="test-if-not">
+        <div>
+            <div class="test-class"></div>
+        </div>
+        <div></div>
+        <div></div>
+    </div>
+
+    <style type="text/css">
+        #test-matches-css > #test-div-background {
+            background: url(data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7);
+        }
+        #test-matches-css > #test-div-before::before {
+            content: "Try to find me";
+            color: #fff;
+        }
+        #test-matches-css > #test-div-after::after {
+            content: "Try to find me";
+            color: #fff;
+        }
+    </style>
+    <div id="test-matches-css">
+        <div id="test-div-background"></div>
+        <div id="test-div-before"></div>
+        <div id="test-div-after"></div>
+    </div>
+
+    <div id="test-opacity-property">
+        <style>
+            #test-opacity-property { opacity: 0.9; }
+        </style>
+    </div>
+    <style id="ignored-stylesheet">
+        #test-properties-ignored-stylesheets-background { background: #333; }
+    </style>
+
+    <div id="test-xpath">
+        <div id="test-xpath-div">
+            <div>
+                <div class="test-xpath-div-inner-class"></div>
+            </div>
+        </div>
+        <div id="test-xpath-content-div">
+            <div>
+                <div class="test-xpath-content-class">
+                    test-xpath-content
+                </div>
+            </div>
+        </div>
+        <div class="test-xpath-class" id="test-xpath-class-div"></div>
+        <div id="test-nth-ancestor-div">
+            <div>
+                <div>
+                    <div>
+                        <div class="test-nth-ancestor-marker">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <div>
+                    <div>
+                        <div>
+                            <div>
+                                <div>
+                                    <div class="test-nth-ancestor-marker">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="test-upward-div" class="test-upward-div">
+            <div>
+                <div>
+                    <div>
+                        <div>
+                            <div class="test-upward-marker">
+                                <div class="test-upward-selector">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <div class="test-upward-marker">
+                    the test target
+                </div>
+            </div>
+            <div id="test-upward-for-contains">
+                <div>
+                    <div>
+                        upward contains test
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<script src="../qunit/qunit-2.10.0.js"></script>
+<script src="../index.js"></script>
+<script src="selector.test.js"></script>
+</body>
+</html>
